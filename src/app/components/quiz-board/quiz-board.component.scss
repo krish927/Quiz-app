@@ -1,0 +1,49 @@
+[nz-radio] {
+    display: block;
+    height: 32px;
+    line-height: 32px;
+  }
+
+  .timer-text{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .question-area{
+     h4{
+        font-size: 28px;
+        font-weight: bold;
+        color: rebeccapurple !important;
+     }
+    ::ng-deep .ant-radio-checked .ant-radio-inner{
+        border-color: rebeccapurple !important;
+    }
+
+    ::ng-deep .ant-radio-inner::after{
+        background-color: rebeccapurple !important;
+    }
+
+    ::ng-deep .ant-radio:hover .ant-radio-inner{
+        border-color: rebeccapurple !important;
+    }
+
+    ::ng-deep .ant-radio-wrapper {
+        font-size: 20px !important;
+    }
+    ::ng-deep .ant-radio {
+        top: 0.02em !important;
+    }
+
+    ::ng-deep span.ant-radio+* {
+        // padding-right: 8px;
+        padding-left: 14px;
+    }
+}
+
+  .btn-area{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }

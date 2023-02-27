@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row justify-content-between py-2">
+        <nav class="nav-bar">
+            <div class="logo-area">
+                <h4 style="color: white; font-weight: 600;">Quiz App</h4>
+            </div>
+            <div class="btn-area">
+                <button class="btn-primary btn my-btn" (click)="registerBtn()" *ngIf="register">Register</button>
+                <button class="btn-primary btn my-btn" (click)="loginBtn()" *ngIf="login">Log In</button>
+                <button class="btn-primary btn my-btn" (click)="logoutBtn()" *ngIf="logout">Log Out</button>
+            </div>
+        </nav>
+    </div>
+</div>

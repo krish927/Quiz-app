@@ -1,0 +1,28 @@
+<div class="container" style="height: 90vh; justify-content: center; display: flex; flex-direction: column;">
+    <div class="row mb-5">
+        <div class="timer-area">
+            <div class="timer-text" >
+                <h4 style="color: rebeccapurple; padding: 5px 10px; border-radius: 5px; border: 2px solid" [ngStyle]="{'border-color' : time < 10 && time >= 5 ? '#ff8f00' : time < 5 ? 'red' : 'green', 'color' : time < 10 && time >= 5 ? '#ff8f00' : time < 5 ? 'red' : 'green' }">Time: <span [ngStyle]="{'color' : time < 10 && time >= 5 ? '#ff8f00' : time < 5 ? 'red' : 'green'}">{{time}}</span></h4>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="question-area">
+            <h4 class="mb-5">{{question?.question}}</h4>
+            <!-- <form  > -->
+            <nz-radio-group [(ngModel)]="radioValue" (ngModelChange)="getAnswer($event)" [disabled]="time== 0" >
+                <label nz-radio class="mb-3" *ngFor="let answers of question?.answers; let i = index" nzValue="{{i}}">{{answers}}</label>
+            </nz-radio-group>
+        <!-- </form> -->
+        </div>
+    </div>
+    <div class="row mt-5 pt-5">
+        <div class="btn-area mt-5">
+            <!-- <nz-pagination [nzPageIndex]="1" [nzPageSize]="1" [nzTotal]="questions.length" (nzPageIndexChange)="pageIndexChanged($event)"></nz-pagination> -->
+            <!-- <button class="btn btn-primary" style="background: rebeccapurple; color: white; border: none;" (click)="previous()" [disabled]="index <= 0">Previous</button> -->
+            <button class="btn btn-primary" style="background: rebeccapurple; color: white; border: none;" (click)="next()" >Next</button>
+        </div>
+    </div>
+</div>
+    
+

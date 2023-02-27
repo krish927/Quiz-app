@@ -1,0 +1,20 @@
+<div class="container" style="height: 90vh; display: flex; flex-direction: column; justify-content: center;">
+    <div class="row" style="height: 100%; align-items: center;">
+        <div class="col-md-5">
+            <div class="right-home">
+                <ng-container *ngIf="login && !register">
+                    <app-login></app-login>
+                </ng-container>
+                <ng-container *ngIf="!login && register">
+                    <app-register></app-register>
+                </ng-container>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="left-home">
+                <img src="./assets/261644039_1050468765742675_2122620602914592881_n.png"
+                alt="">
+            </div>
+        </div>
+    </div>
+</div>
