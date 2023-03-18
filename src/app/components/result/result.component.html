@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row my-3">
+    <div class="col-md-7">
+      <p class="result-text">Total Questions: <span>{{resultData.length}}</span></p>
+      <p class="result-text">Questions Attempted: <span>{{resultData.length}}</span></p>
+      <p class="result-text" style="color: green;">Right Answer: <span>{{rightAnswer.length}}</span></p>
+      <p class="result-text" style="color: red;">Wrong Answer: <span>{{wrongAnswer.length}}</span></p>
+    </div>
+    <div class="col-md-5">
+      <div class="radio-container">
+        <nz-radio-group [(ngModel)]="radioValue" nzButtonStyle="solid" (ngModelChange)="getQuestionType(radioValue)">
+          <label nz-radio-button nzValue="all">All</label>
+          <label nz-radio-button nzValue="right">Right</label>
+          <label nz-radio-button nzValue="wrong">Wrong</label>
+        </nz-radio-group>
+      </div>
+    </div>
+    
+  </div>
+  <div class="row">
+    <nz-table #basicTable [nzData]="resultData" [nzShowPagination]="false" [nzPageSize]="resultData.length">
+      <thead>
+        <tr>
+          <th *ngFor="let heading of tableHeadings">{{heading}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data">
+          <td>{{ data.index + 1}}</td>
+          <td>{{ data.question}}</td>
+          <td>{{ +data.selected + 1 }}</td>
+          <td>{{ +data.correctIndex + 1 }}</td>
+          <td><span nz-icon [nzType]="+data.correctIndex ==  +data.selected ? 'check' : 'close'" [ngStyle] ="{'color' : (data.correctIndex ==  data.selected) ? 'green' : 'red'}" nzTheme="outline" style="font-size: 16px; font-weight: bold;"></span></td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>

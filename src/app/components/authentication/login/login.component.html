@@ -1,0 +1,29 @@
+<div class="login-conatiner">
+    <div class="title-area mb-5">
+        <h1 style="color: rebeccapurple; text-align: center;">Login</h1>
+    </div>
+    <div class="form-area">
+        <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+            <nz-form-item>
+              <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="userName">E-mail</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your username!">
+                  <input type="email" nz-input formControlName="userName" placeholder="Email" />
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+            <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired>Password</nz-form-label>
+              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your Password!">
+                  <input type="password" nz-input formControlName="password" placeholder="Password" />
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item nz-row class="register-area">
+                <nz-form-control [nzSpan]="14" [nzOffset]="6">
+                  <button nz-button nzType="primary" style="background: rebeccapurple; border: none;">Log In</button>
+                </nz-form-control>
+              </nz-form-item>
+          </form>
+    </div>
+    
+</div>
+
+  
